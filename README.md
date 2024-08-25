@@ -7,7 +7,7 @@ This repository provides a minimal setup to get React working with Vite. It incl
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/yourusername/Dashboard-Writix-AI.git
+   git clone https://github.com/aniketsinha2002/Dashboard-Writix-AI.git
 
    ```
 
