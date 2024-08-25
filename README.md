@@ -38,7 +38,8 @@ This repository provides a minimal setup to get React working with Vite. It incl
 
 ## Screenshots
 
-![PreviewNew](image-1.png)
+![alt text](image.png)
+
 ![alt text](intern-task-main-writix.png)
 
 Feel free to contribute or suggest improvements to enhance the functionality and usability of this setup.
