@@ -23,9 +23,7 @@ const FeatureCard = ({
       </div>
 
       <div className="flex flex-col items-center">
-        <div className="text-3xl md:text-4xl font-bold md:mt-4 md:mb-2 ">
-          {value}
-        </div>
+        <div className="text-4xl font-bold md:mt-4 md:mb-2 ">{value}</div>
       </div>
 
       <div className="">

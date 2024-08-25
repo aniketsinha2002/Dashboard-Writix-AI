@@ -3,7 +3,7 @@ import "react-circular-progressbar/dist/styles.css";
 
 const ProgressCircle = ({ percentage }) => {
   return (
-    <div className="mt-8 w-[7rem] md:w-[8rem]">
+    <div className="mt-8 w-[7rem] hidden md:block md:w-[8rem]">
       <CircularProgressbar
         value={percentage}
         text={`${percentage}%`}
