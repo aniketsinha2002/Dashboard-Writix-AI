@@ -32,7 +32,7 @@ const MainContent = ({ isToggled }) => {
     setSearchResults(
       results.length > 0
         ? results
-        : [{ id: null, title: "Sorry, not found", btn: "" }]
+        : [{ id: null, title: "Sorry, not found", btn: "", showBtn: "hidden" }]
     );
   };
 
@@ -56,6 +56,7 @@ const MainContent = ({ isToggled }) => {
               value={feature.value}
               indicator={feature.indicator}
               btn={feature.btn}
+              showBtn={feature.showBtn}
               onRemove={() => handleRemoveFeature(feature.id)}
               isToggled={isToggled}
             />

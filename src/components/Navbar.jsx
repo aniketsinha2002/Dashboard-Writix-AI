@@ -9,16 +9,15 @@ const Navbar = ({ isToggled, toggleTheme }) => {
     >
       <div className="text-xl font-bold text-white">Writix AI</div>
 
-      <div className="flex items-center space-x-10 text-white">
+      <div className="flex flex-row items-center space-x-10 text-white">
         {/* Theme toggle button */}
-        <div className="mt-[0.24rem] text-xl">
-          <Classic
-            toggled={!isToggled}
-            toggle={toggleTheme}
-            duration={900}
-            forceMotion={true}
-          />
-        </div>
+        <Classic
+          className="text-2xl"
+          toggled={!isToggled}
+          toggle={toggleTheme}
+          duration={900}
+          forceMotion={true}
+        />
         <FaEnvelope className={`cursor-pointer `} />
         <FaBell className={`cursor-pointer `} />
         <FaUserCircle className={`cursor-pointer `} size={24} />

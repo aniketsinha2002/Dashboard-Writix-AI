@@ -40,7 +40,7 @@ This repository provides a minimal setup to get React working with Vite. It incl
 
 ### Preview
 
-![alt text](image-1.png)
+![alt text](image.png)
 
 ### Wireframe
 

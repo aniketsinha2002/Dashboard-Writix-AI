@@ -20,7 +20,7 @@ const Sidebar = ({ isToggled }) => {
         isToggled ? "bg-[#212223] text-white" : "bg-gray-100 text-black"
       } px-4 py-5 shadow min-h-[92vh] flex flex-col justify-between w-[3.5rem] md:w-[15rem]`}
     >
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 justify-between items-center md:items-start">
         {options.map((option, index) => (
           <SidebarOption key={index} icon={option.icon} label={option.label} />
         ))}
