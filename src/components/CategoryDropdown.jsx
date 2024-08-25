@@ -12,8 +12,8 @@ const CategoryDropdown = ({ isToggled }) => {
   return (
     <div className="relative">
       <select
-        className={`border p-2 rounded-md text-[#585757] ${
-          isToggled ? "bg-[#212223] border-gray-700" : "bg-white"
+        className={`tracking-wide border p-2 border-none focus:outline-none rounded-md text-[#928e8e] ${
+          isToggled ? "bg-[#2C2C2C] border-gray-700" : "bg-white"
         }`}
       >
         {categories.map((category) => (

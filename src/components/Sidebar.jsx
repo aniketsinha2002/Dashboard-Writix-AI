@@ -18,7 +18,7 @@ const Sidebar = ({ isToggled }) => {
     <div
       className={`${
         isToggled ? "bg-[#212223] text-white" : "bg-gray-100 text-black"
-      } px-4 py-5 shadow min-h-screen flex flex-col justify-between w-[10rem] md:w-[15rem]`}
+      } px-4 py-5 shadow min-h-[92vh] flex flex-col justify-between w-[10rem] md:w-[15rem]`}
     >
       <div className="flex flex-col gap-4">
         {options.map((option, index) => (
@@ -35,7 +35,7 @@ const Sidebar = ({ isToggled }) => {
 const SidebarOption = ({ icon, label }) => (
   <div className="flex items-center space-x-4 mb-4 cursor-pointer">
     <div>{icon}</div>
-    <div>{label}</div>
+    <div className="md:tracking-wide">{label}</div>
   </div>
 );
 

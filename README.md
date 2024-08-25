@@ -38,9 +38,21 @@ This repository provides a minimal setup to get React working with Vite. It incl
 
 ## Screenshots
 
-![alt text](image.png)
+### Preview
+
+![alt text](image-1.png)
+
+### Wireframe
 
 ![alt text](intern-task-main-writix.png)
+
+## Features
+
+- 100% Responsive for all devices
+- Light and Dark Theme
+- Search Bar - Functional
+- Remove Btn Functional
+- Data Used -> Mock Data (Every Component is Dynamic)
 
 Feel free to contribute or suggest improvements to enhance the functionality and usability of this setup.
 Copy
