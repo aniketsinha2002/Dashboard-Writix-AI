@@ -55,4 +55,3 @@ This repository provides a minimal setup to get React working with Vite. It incl
 - Data Used -> Mock Data (Every Component is Dynamic)
 
 Feel free to contribute or suggest improvements to enhance the functionality and usability of this setup.
-Copy
