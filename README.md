@@ -56,7 +56,3 @@ This repository provides a minimal setup to get React working with Vite. It incl
 
 Feel free to contribute or suggest improvements to enhance the functionality and usability of this setup.
 Copy
-
-```
-
-```
