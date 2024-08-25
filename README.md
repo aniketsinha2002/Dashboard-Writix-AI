@@ -53,5 +53,6 @@ This repository provides a minimal setup to get React working with Vite. It incl
 - Search Bar - Functional
 - Remove Btn Functional
 - Data Used -> Mock Data (Every Component is Dynamic)
+- Little Animation on Remove, Toggle Theme
 
 Feel free to contribute or suggest improvements to enhance the functionality and usability of this setup.

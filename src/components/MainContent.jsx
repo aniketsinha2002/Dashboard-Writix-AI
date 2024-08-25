@@ -1,69 +1,28 @@
 import { useState } from "react";
-import {
-  FaWallet,
-  FaUsers,
-  FaCalendarDay,
-  FaShoppingCart,
-  FaDownload,
-  FaLongArrowAltUp,
-  FaLongArrowAltDown,
-} from "react-icons/fa";
-import ProfitIndicator from "./ProfitIndicator";
-import LossIndicator from "./LossIndicator";
+import { mockData } from "../assets/MockData"; //MOCK DATA
 import SearchBar from "./SearchBar";
 import CategoryDropdown from "./CategoryDropdown";
 import FeatureCard from "./FeatureCard";
 
 const MainContent = ({ isToggled }) => {
-  const [features, setFeatures] = useState([
-    {
-      id: 1,
-      icon: <FaWallet />,
-      title: "Balance",
-      value: "$12,345",
-      indicator: <ProfitIndicator val={"10.54%"} />,
-      btn: "Remove",
-    },
-    {
-      id: 2,
-      icon: <FaUsers />,
-      title: "Number of Clients",
-      value: "150",
-      indicator: <LossIndicator val={"10.54%"} />,
-      btn: "Remove",
-    },
-    {
-      id: 3,
-      icon: <FaCalendarDay />,
-      title: "Today's Bookings",
-      value: "+ 12",
-      indicator: <ProfitIndicator val={"10.54%"} />,
-      btn: "Remove",
-    },
-    {
-      id: 4,
-      icon: <FaShoppingCart />,
-      title: "Purchases",
-      value: "24",
-      indicator: <ProfitIndicator val={"10.54%"} />,
-      btn: "Remove",
-    },
-    {
-      id: 5,
-      icon: <FaDownload />,
-      title: "Downloads",
-      value: "1,200",
-      indicator: <LossIndicator val={"10.54%"} />,
-      btn: "Remove",
-    },
-  ]);
-
-  const [searchResults, setSearchResults] = useState(features);
+  const [features, setFeatures] = useState(mockData);
+  const [searchResults, setSearchResults] = useState(mockData);
 
   const handleRemoveFeature = (id) => {
-    const updatedFeatures = features.filter((feature) => feature.id !== id);
-    setFeatures(updatedFeatures);
-    setSearchResults(updatedFeatures);
+    setSearchResults((prevResults) =>
+      prevResults.map((feature) =>
+        feature.id === id ? { ...feature, isRemoving: true } : feature
+      )
+    );
+
+    setTimeout(() => {
+      setFeatures((prevFeatures) =>
+        prevFeatures.filter((feature) => feature.id !== id)
+      );
+      setSearchResults((prevResults) =>
+        prevResults.filter((feature) => feature.id !== id)
+      );
+    }, 300);
   };
 
   const handleSearch = (query) => {
@@ -78,23 +37,29 @@ const MainContent = ({ isToggled }) => {
   };
 
   return (
-    <div className={`flex-grow p-4 `}>
+    <div className="flex-grow p-4">
       <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row justify-between mb-4">
         <SearchBar onSearch={handleSearch} isToggled={isToggled} />
         <CategoryDropdown isToggled={isToggled} />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {searchResults.map((feature) => (
-          <FeatureCard
+          <div
             key={feature.id}
-            icon={feature.icon}
-            title={feature.title}
-            value={feature.value}
-            indicator={feature.indicator}
-            btn={feature.btn}
-            onRemove={() => handleRemoveFeature(feature.id)}
-            isToggled={isToggled}
-          />
+            className={`transition-opacity duration-300 transform ${
+              feature.isRemoving ? "opacity-0 scale-95" : ""
+            }`}
+          >
+            <FeatureCard
+              icon={feature.icon}
+              title={feature.title}
+              value={feature.value}
+              indicator={feature.indicator}
+              btn={feature.btn}
+              onRemove={() => handleRemoveFeature(feature.id)}
+              isToggled={isToggled}
+            />
+          </div>
         ))}
       </div>
     </div>

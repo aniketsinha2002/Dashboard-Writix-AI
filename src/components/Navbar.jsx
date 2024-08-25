@@ -11,8 +11,13 @@ const Navbar = ({ isToggled, toggleTheme }) => {
 
       <div className="flex items-center space-x-10 text-white">
         {/* Theme toggle button */}
-        <div>
-          <Classic toggled={!isToggled} toggle={toggleTheme} />
+        <div className="mt-[0.24rem] text-xl">
+          <Classic
+            toggled={!isToggled}
+            toggle={toggleTheme}
+            duration={900}
+            forceMotion={true}
+          />
         </div>
         <FaEnvelope className={`cursor-pointer `} />
         <FaBell className={`cursor-pointer `} />
